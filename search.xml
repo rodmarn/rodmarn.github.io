@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hexo主题博客搭建</title>
+    <url>/2020/03/29/Hexo%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<p><img src="/2020/03/29/Hexo%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/fm1.jpg" alt></p>
+<a id="more"></a>
+
+<p>在我刚刚用bootstrap框架把个人博客搭好没几天，老师又说要用hexo来试下，心都碎了，所以拖了好几个星期没动手。在此附上<a href="http://47.115.92.26:8080/HomePage/index.jsp" target="_blank" rel="noopener">之前的博客链接</a></p>
+<p>一开始走了个弯路导致自己花费了很多时间精力。由于我使用的是Next主题的7.7.2版本，这个版本太新了，且许多地方做了改变，导致网上多数的搭建教程里所说的某某文件夹在我的电脑里都没有，一直东找西找摸索了很久，终于在蛛丝马迹中得以上手。慢慢上手后发现hexo真的很有趣，可以添加页面宠物、播放器、点击特效、动态背景等等，感觉回到曾经装扮qq空间的年代。简单说下：</p>
+<ul>
+<li><h3 id="如何设置自定义内容（针对Next7-X以上版本）"><a href="#如何设置自定义内容（针对Next7-X以上版本）" class="headerlink" title="如何设置自定义内容（针对Next7.X以上版本）"></a>如何设置自定义内容（针对Next7.X以上版本）</h3><p>困扰我的主要是搭建基本完成后如何设置页面自定义内容，网上的next教程里大多是讲在<em>\theme\next\scource\css\custom\ _custom.sty</em>中设置。但是我这里已经没有这个文件了。方法如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">法1.\themes\next\source\css\_common\components\back-to-top.styl写入代码</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">法2.在主题配置文件中去掉style: source&#x2F;data&#x2F;styles.styl前的#，在\source中新建文件夹data\styles.styl写代码</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><h3 id="如何添加页面宠物"><a href="#如何添加页面宠物" class="headerlink" title="如何添加页面宠物"></a>如何添加页面宠物</h3><p>首先在博客目录下执行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -save hexo-helper-live2d</span><br></pre></td></tr></table></figure>
+
+<p>然后在站点配置文件中加入：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  enable: true</span><br><span class="line">  scriptFrom: local</span><br><span class="line">  pluginRootPath: live2dw&#x2F;</span><br><span class="line">  pluginJsPath: lib&#x2F;</span><br><span class="line">  pluginModelPath: assets&#x2F;</span><br><span class="line">  tagMode: false</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-wanko  #选择哪种模型</span><br><span class="line">  display: #放置位置和大小</span><br><span class="line">    position: right</span><br><span class="line">    width: 150</span><br><span class="line">    height: 300</span><br><span class="line">  mobile:</span><br><span class="line">    show: false #是否在手机端显示</span><br></pre></td></tr></table></figure>
+
+<p>上面模型的选择可在<a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">lived2d</a>中选择，并下载相应的模型：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install live2d-widget-model-wanko</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><h3 id="如何给主页文章添加阴影"><a href="#如何给主页文章添加阴影" class="headerlink" title="如何给主页文章添加阴影"></a>如何给主页文章添加阴影</h3><p>这个很常见，但是对我这个版本有些问题。我有试过在根目录/source/_data/styles.styl中添加css代码，但好像不管用，可能有小伙伴和我有一样的困扰，后来试了在\themes\next\source\css_common\components\post下的post.styl里的.use-motion中写入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.post-block &#123;</span><br><span class="line">   opacity: 0;</span><br><span class="line">   margin-top: 60px;</span><br><span class="line">   margin-bottom: 60px;</span><br><span class="line">   padding: 25px;</span><br><span class="line">   -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);</span><br><span class="line">   -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<p>还有很多千奇百怪的博客配置，可以去网上搜索，这里就不赘述了~</p>
+<p>参考文章：<a href="https://blog.csdn.net/nightmare_dimple/article/details/86661502" target="_blank" rel="noopener">链接1</a> <a href="https://tieba.baidu.com/p/6365333284" target="_blank" rel="noopener">链接2</a></p>
+]]></content>
+      <categories>
+        <category>-技术</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>我的第一篇博客</title>
+    <url>/2020/03/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p><img src="/2020/03/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/fm1.jpg" alt></p>
+<a id="more"></a>
+
+<h2 id="gt-学习心得"><a href="#gt-学习心得" class="headerlink" title="&gt;学习心得"></a>&gt;<em>学习心得</em></h2><blockquote>
+<ul>
+<li><h3 id="初识JSP"><a href="#初识JSP" class="headerlink" title="初识JSP"></a>初识JSP</h3><blockquote>
+<p>刚放假就被老师布置了一大堆作业，屋漏偏逢连夜雨，到家后还没来得动工，就发烧了，犹记得那几天苟延残喘地完成了云服务器配置，现在想来还是要说一句我太难了！所幸终于磕磕绊绊走上了学习道路，其实一开始接触jsp我还是兴致勃勃的，没几天就抓狂这玩意也太无聊了，啥也没懂光跟着打代码了，最可怕的不是老师群里一日三餐地催作业，而是前排几个大佬你追我赶地学，你们不睡觉的吗？？？</p>
+</blockquote>
+<!-----more---->
+</li>
+<li><h3 id="居家学习心路历程"><a href="#居家学习心路历程" class="headerlink" title="居家学习心路历程"></a>居家学习心路历程</h3><blockquote>
+<p> 前一天晚上想着明天如何如何学习 干劲100%<br> 醒来之后 干劲50%<br> 吃完饭 干劲25%<br> 看几分钟网课 干劲0%<br> ……</p>
+</blockquote>
+</li>
+<li><h3 id="小小的收获"><a href="#小小的收获" class="headerlink" title="小小的收获"></a>小小的收获</h3><blockquote>
+<p>是我太单纯了，我单知道要学，不知道要学那么多！我都觉得我被知识灌溉了。有几次编写代码，一坐就是三四个小时，真是无比痛苦，但努力解决bug，运行成功的时候，成就感又油然而生。srds，这么多天的学习也让我体会到，学编程真的不能浮躁，不管是从网课里分析别人的代码、理解他们的思路，还是自己动手编写实例、运行程序，都需要保持平静。虽然我经常也会控制不住烦躁的情绪，想敷衍了事，但是事实证明，只能一步一脚印，打好基础才有收获。</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2 id="gt-成果展示"><a href="#gt-成果展示" class="headerlink" title="&gt;成果展示"></a>&gt;<em>成果展示</em></h2><p><img src="/2020/03/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/pic5.png" alt="Cookies"></p>
+<p><img src="/2020/03/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/pic7.png" alt="Perfume"></p>
+]]></content>
+      <categories>
+        <category>-心得</category>
+      </categories>
+      <tags>
+        <tag>-日记</tag>
+      </tags>
+  </entry>
+</search>
