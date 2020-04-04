@@ -43,8 +43,11 @@
 <p>参考文章：<a href="https://blog.csdn.net/nightmare_dimple/article/details/86661502" target="_blank" rel="noopener">链接1</a> <a href="https://tieba.baidu.com/p/6365333284" target="_blank" rel="noopener">链接2</a></p>
 ]]></content>
       <categories>
-        <category>-技术</category>
+        <category>-hexo</category>
       </categories>
+      <tags>
+        <tag>-技术</tag>
+      </tags>
   </entry>
   <entry>
     <title>我的第一篇博客</title>

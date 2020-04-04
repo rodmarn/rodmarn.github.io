@@ -6,14 +6,8 @@ const ap = new APlayer({
 	{
         name: 'I Could Be the One',
         artist: 'Donna Lewis',
-        url: 'http://music.163.com/song/media/outer/url?id=19724606.mp3',
+        url: 'http://music.163.com/song/media/outer/url?id=5077151.mp3',
         cover: '/images/2.jpg',
-      },
-	{
-        name: '没有意外',
-        artist: '蔡徐坤',
-        url: 'http://music.163.com/song/media/outer/url?id=1346079558.mp3',
-        cover: '/images/8.jpg',
       },
 	   {
         name: 'Reset',
@@ -22,9 +16,9 @@ const ap = new APlayer({
         cover: '/images/1.jpg',
       },
 	  {
-        name: '成全',
-        artist: '林宥嘉',
-        url: 'http://music.163.com/song/media/outer/url?id=562594267.mp3',
+        name: 'Blow Me a Kiss',
+        artist: 'Deep Side',
+        url: 'http://music.163.com/song/media/outer/url?id=2526628.mp3',
         cover: '/images/3.jpg',
       },
 	  {
